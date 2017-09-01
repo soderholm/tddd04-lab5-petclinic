@@ -82,7 +82,8 @@ public class PetController {
         }
         if (result.hasErrors()) {
             model.put("pet", pet);
-            return "pets/createOrUpdatePetForm";
+	    // return "pets/createOrUpdatePetForm";
+            return "redirect:/owners/{ownerId}";
         } else {
             owner.addPet(pet);
             this.clinicService.savePet(pet);
